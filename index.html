@@ -13,15 +13,15 @@
             padding: 0;
         }
 
-        /* 촌스러운 꽃무늬 밥상 & 에로틱 다방 테마 배경 */
+        /* 빛바랜 싸구려 다방 & 촌스러운 밝은 톤 테마 배경 */
         body {
-            /* 촌스러운 땡땡이/꽃무늬 벽지 느낌의 패턴 */
-            background-color: #2e0005;
-            background-image: radial-gradient(#6b001c 15%, transparent 16%), radial-gradient(#6b001c 15%, transparent 16%);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+            /* 빛바랜 꽃무늬 벽지 느낌의 패턴 */
+            background-color: #f4ebd8;
+            background-image: radial-gradient(#e0c5c5 15%, transparent 16%), radial-gradient(#e0c5c5 15%, transparent 16%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
             font-family: 'Noto Sans KR', sans-serif;
-            color: #fce8e8;
+            color: #3b2a22; /* 빛바랜 고동색 */
             line-height: 1.7;
             display: flex;
             justify-content: center;
@@ -30,52 +30,52 @@
         .wrap {
             width: 100%;
             max-width: 480px;
-            background-color: #1a0505;
-            /* 옛날 칠기 밥상 테두리 느낌 */
-            border: 6px ridge #8b0022;
-            box-shadow: 0 0 40px rgba(255, 0, 85, 0.4);
+            background-color: #fdfbf4; /* 누런빛이 도는 벽지 색 */
+            /* 옛날 다방 메뉴판이나 촌스러운 액자 테두리 느낌 */
+            border: 4px double #d98a96;
+            box-shadow: 0 5px 15px rgba(138, 59, 74, 0.15);
             overflow: hidden;
         }
 
         /* Header Area */
         .header {
-            background: linear-gradient(180deg, #4a0018 0%, #1a0005 100%);
+            background: linear-gradient(180deg, #fbe8eb 0%, #f7f2d7 100%);
             padding: 55px 25px 45px;
             text-align: center;
-            border-bottom: 4px double #ff0055;
+            border-bottom: 3px solid #489c7a; /* 다방 소파 옥색 */
         }
 
         .header .sub-title {
             font-family: 'Gowun Dodum', serif;
             font-size: 0.95rem;
             font-weight: 700;
-            color: #00ffcc; /* 촌스러운 옥반지 색상 */
+            color: #387d60; /* 짙은 옥색 */
             margin-bottom: 12px;
             letter-spacing: 1px;
-            text-shadow: 1px 1px 2px #000;
         }
 
         .header .main-title {
             font-family: 'Gowun Dodum', serif;
             font-size: 2.4rem;
             font-weight: 700;
-            color: #ffff00; /* 노래방 자막 같은 쨍한 노란색 */
+            color: #c42b47; /* 빛바랜 간판 빨간색 */
             margin-bottom: 18px;
             word-break: keep-all;
             line-height: 1.3;
-            text-shadow: 3px 3px 0px #ff0055, 0 0 15px #ff0000;
+            text-shadow: 2px 2px 0px #f0d15d; /* 촌스러운 노란색 그림자 */
         }
 
         .header .desc {
             font-size: 1rem;
-            color: #ffb3cc;
+            color: #7a5c53;
             word-break: keep-all;
+            font-weight: 500;
         }
 
         /* Section Common */
         .section {
             padding: 45px 25px;
-            border-bottom: 2px dashed #4a0018;
+            border-bottom: 2px dashed #e3c3c8;
         }
 
         .section:last-child {
@@ -85,12 +85,11 @@
         .sec-title {
             font-size: 1.35rem;
             font-weight: 700;
-            color: #ff007f;
+            color: #a8324e;
             margin-bottom: 22px;
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 2px 2px 0px #3d0014;
         }
 
         .sec-title::before {
@@ -98,24 +97,22 @@
             display: block;
             width: 5px;
             height: 20px;
-            background-color: #00ffcc; /* 옥색 포인트 */
+            background-color: #489c7a; /* 옥색 포인트 */
             border-radius: 3px;
-            box-shadow: 0 0 8px #00ffcc;
         }
 
         /* Worldview & Places */
         .text-box {
-            background-color: rgba(61, 0, 10, 0.8); /* 다방 소파 색상 */
+            background-color: #fcf8e8; /* 누런 장판 색 */
             padding: 22px;
             border-radius: 12px;
             margin-bottom: 15px;
-            border: 2px dashed #ff0055;
-            box-shadow: inset 0 0 15px rgba(255, 0, 85, 0.2);
+            border: 1px solid #e8b5bc;
         }
 
         .text-box p {
             font-size: 1rem;
-            color: #ffccd5;
+            color: #4a362e;
         }
 
         .place-item {
@@ -128,15 +125,14 @@
 
         .place-item h4 {
             font-size: 1.1rem;
-            color: #ffff00;
+            color: #a67c00; /* 탁한 겨자색 */
             margin-bottom: 8px;
             font-weight: 700;
-            text-shadow: 1px 1px 2px #000;
         }
 
         .place-item p {
             font-size: 1rem;
-            color: #e6b3bc;
+            color: #5c473f;
         }
 
         /* Character Profile */
@@ -145,8 +141,8 @@
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 30px;
-            border: 3px solid #ff0055;
-            box-shadow: 0 0 25px rgba(255, 0, 85, 0.5);
+            border: 3px solid #d98a96;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
         .profile-img-wrap img {
@@ -162,15 +158,15 @@
         .info-group h4 {
             font-size: 1.15rem;
             font-weight: 700;
-            color: #00ffcc;
+            color: #387d60;
             margin-bottom: 12px;
-            border-bottom: 2px dotted #ff0055;
+            border-bottom: 2px dotted #d98a96;
             padding-bottom: 8px;
         }
 
         .info-group p {
             font-size: 1rem;
-            color: #e6b3bc;
+            color: #4a362e;
             word-break: keep-all;
         }
 
@@ -183,7 +179,7 @@
             position: relative;
             padding-left: 18px;
             font-size: 1rem;
-            color: #e6b3bc;
+            color: #4a362e;
             margin-bottom: 10px;
             word-break: keep-all;
         }
@@ -192,24 +188,22 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #ff0055;
+            color: #d1566e;
             font-weight: bold;
             font-size: 1.2rem;
             line-height: 1.4;
-            text-shadow: 0 0 5px #ff0055;
         }
 
         .info-list strong {
-            color: #ff80ab;
+            color: #a8324e;
             font-weight: 700;
         }
 
         /* Tags for Sexual Traits */
         .trait-list li::before {
             content: '✓';
-            color: #ffff00;
+            color: #d1566e;
             font-size: 1rem;
-            text-shadow: 0 0 3px #ffff00;
         }
 
         .keyword-tags {
@@ -220,27 +214,25 @@
         }
 
         .keyword-tags span {
-            background-color: #ff0055;
-            color: #ffff00;
+            background-color: #f2cdd4;
+            color: #9e233d;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid #ffcc00;
-            box-shadow: 2px 2px 0px #8b0022;
+            border: 1px solid #e3a8b2;
         }
 
         /* Story Synopsis */
         .synopsis {
             font-family: 'Gowun Dodum', serif;
             font-size: 1.05rem;
-            color: #ffccd5;
+            color: #3b2a22;
             line-height: 1.8;
-            background: rgba(26, 0, 5, 0.9);
+            background: #f5f0e1; /* 누렇게 바랜 종이 색 */
             padding: 28px 24px;
             border-radius: 12px;
-            border: 3px double #ff0055;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.9);
+            border: 2px dashed #c29d6d; /* 다방 성냥갑 테두리 느낌 */
         }
 
     </style>
@@ -312,7 +304,7 @@
             <div class="info-group">
                 <h4>성격 및 심리</h4>
                 <ul class="info-list">
-                    <li><strong>표면적 모습:</strong> 무해한 '동네 삼촌’ 페르소나, 넉살 좋고 능글맞은 충청도식 유머 구사</li>
+                    <li><strong>표면적 모습:</strong> 무해한 '동네 삼촌' 페르소나, 넉살 좋고 능글맞은 충청도식 유머 구사</li>
                     <li><strong>내면의 결핍:</strong> 오랜 독수공방으로 인해 깊게 자리 잡은 노총각 특유의 지독한 외로움</li>
                     <li><strong>관계적 특성:</strong> 자신의 바운더리 안에 들어온 사람은 무조건 책임지는 순정적이고 낭만적인 태도</li>
                 </ul>
@@ -320,7 +312,7 @@
 
             <div class="info-group">
                 <h4>배경 서사</h4>
-                    <p>학창 시절 씨름부 출신. 과거, 방황하던 시절을 겪었으나, 정신 차리고자 해병대 입대. 해병대 제대 후 아픈 아버지를 대신해 농사로 집안의 빚을 갚고 부모님 병수발을 들며 청춘을 바쳤다. 40대가 되어 빚을 모두 청산하고 부를 이뤘지만, 이미 늦어버린 혼기 탓에 매일 밤 오른손과 함께 외로움을 달래며 독수공방 중.</p>
+                    <p>학창 시절 씨름부 출신. 과거, 방황하던 시절을 겪었으나, 정신 차리고자 해병대 입대. 해병대 제대 후 아픈 아버지를 대신해 농사로 집안의 빚을 갚고 부모님 병수발을 들며 청춘을 바쳤다. 40대가 되어 빚을 모두 청산하고 땅을 불려 부를 이뤘지만, 이미 늦어버린 혼기 탓에 매일 밤 오른손과 함께 외로움을 달래며 독수공방 중.</p>
                 </ul>
             </div>
 
@@ -330,7 +322,7 @@
                     <span>Daddy Dom</span>
                     <span>Brat Tamer</span>
                     <span>Praise Kink</span>
-                    <span>🔒???</span>
+                    <span>???</span>
                 </div>
                 <ul class="info-list trait-list">
                     <li>압도적인 크기와 투박한 형태로 시각적, 물리적 버거움과 쾌락을 동시에 유발함.</li>
