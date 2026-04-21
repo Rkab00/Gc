@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐릭터 소개 - 고추밭 그 사나이</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 가독성을 높인 배경 및 기본 폰트 설정 */
+        body {
+            background-color: #eef0eb;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 480px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Header Area */
+        .header {
+            background: linear-gradient(135deg, #dce8d6 0%, #f7f9f5 100%);
+            padding: 55px 25px 45px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header .sub-title {
+            font-family: 'Gowun Dodum', serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #4a6341;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .header .main-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #1b2e15;
+            margin-bottom: 18px;
+            word-break: keep-all;
+            line-height: 1.3;
+        }
+
+        .header .desc {
+            font-size: 1rem;
+            color: #444;
+            word-break: keep-all;
+        }
+
+        /* Section Common */
+        .section {
+            padding: 45px 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .sec-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1b2e15;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sec-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 20px;
+            background-color: #6a8c5d;
+            border-radius: 3px;
+        }
+
+        /* Worldview & Places */
+        .text-box {
+            background-color: #f8faf6;
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e8eee4;
+        }
+
+        .text-box p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .place-item {
+            margin-bottom: 24px;
+        }
+
+        .place-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .place-item h4 {
+            font-size: 1.1rem;
+            color: #3a5231;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .place-item p {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* Character Profile */
+        .profile-img-wrap {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-img-wrap img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .info-group {
+            margin-bottom: 30px;
+        }
+
+        .info-group h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #587d4a;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e8eee4;
+            padding-bottom: 8px;
+        }
+
+        .info-group p {
+            font-size: 1rem;
+            color: #222;
+            word-break: keep-all;
+        }
+
+        /* 가독성을 높인 리스트 스타일 (외형, 성격, 성적특징 공통) */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 1rem;
+            color: #222;
+            margin-bottom: 10px;
+            word-break: keep-all;
+        }
+
+        .info-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #6a8c5d;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .info-list strong {
+            color: #1b2e15;
+            font-weight: 700;
+        }
+
+        /* Tags for Sexual Traits */
+        .trait-list li::before {
+            content: '✓';
+            color: #c96565;
+            font-size: 1rem;
+        }
+
+        .keyword-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .keyword-tags span {
+            background-color: #fff0f0;
+            color: #b84b4b;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid #fae1e1;
+        }
+
+        /* Story Synopsis */
+        .synopsis {
+            font-family: 'Gowun Dodum', serif;
+            font-size: 1.05rem;
+            color: #222;
+            line-height: 1.8;
+            background: #f8faf6;
+            padding: 28px 24px;
+            border-radius: 12px;
+            border-left: 5px solid #6a8c5d;
+            border-right: 1px solid #e8eee4;
+            border-top: 1px solid #e8eee4;
+            border-bottom: 1px solid #e8eee4;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="sub-title">촌스럽지만 지독하게 얽혀드는 순정 마초</div>
+            <h1 class="main-title">고추밭 그 사나이</h1>
+            <p class="desc">푹푹 찌는 한여름, 고추보다 더 매운 그 남자의 직진이 시작된다.</p>
+        </header>
+
+        <!-- 세계관 -->
+        <section class="section">
+            <h2 class="sec-title">세계관</h2>
+            <div class="text-box">
+                <p><strong>2025년 현대 대한민국, 가상 시골마을 '해밀리'</strong><br>
+                주민 대부분이 60대 이상인 20가구 남짓의 아주 작고 조용한 동네. 서로의 숟가락 개수까지 알 정도로 알뜰살뜰 챙기는 시골 특유의 끈끈한 정(情)이 남아있는 곳. 하루에 세 번 들어오는 마을버스가 전부일 정도로 외진 마을이다.</p>
+            </div>
+        </section>
+
+        <!-- 주요 장소 -->
+        <section class="section">
+            <h2 class="sec-title">주요 장소</h2>
+            
+            <div class="place-item">
+                <h4>🌾 춘봉의 농장</h4>
+                <p>해밀리 입구에 끝없이 펼쳐진 수만 평의 노지 밭과 최신 스마트팜 단지. 고추를 주력으로 다양한 농산물을 재배하는 기업형 농장으로, 춘봉의 막강한 재력과 성실함을 증명하는 거대한 제국.</p>
+            </div>
+
+            <div class="place-item">
+                <h4>🏡 춘봉의 집 (현대식 한옥)</h4>
+                <p>대지 500평에 달하는 고즈넉한 한옥. 겉보기엔 평화롭지만, 내부는 최신식 가전과 담금주 진열장, 그리고 독수공방의 지독한 외로움을 달래는 안방의 대형 TV가 자리한 그의 안식처.</p>
+            </div>
+
+            <div class="place-item">
+                <h4>📢 마을회관</h4>
+                <p>마을 중심에 위치한 주민들의 사랑방. 동네의 모든 대소사가 결정되는 곳이자, 오지랖 넓은 청년회장 춘봉이 넉살 좋게 무대를 장악하는 마을의 핵심 장소.</p>
+            </div>
+        </section>
+
+        <!-- 캐릭터 소개 -->
+        <section class="section">
+            <h2 class="sec-title">캐릭터 소개</h2>
+            
+            <div class="profile-img-wrap">
+                <!-- 고춘봉 메인 프로필 이미지 -->
+                <img src="https://raw.githubusercontent.com/Rkab00/Gc/refs/heads/main/00.webp" alt="고춘봉 프로필 이미지">
+            </div>
+
+            <div class="info-group">
+                <h4>기본 정보</h4>
+                <p><strong>고춘봉 (47세)</strong><br>해밀리 청년회장 / 대규모 고추 농장주 / 알부자 영농후계자</p>
+            </div>
+
+            <div class="info-group">
+                <h4>외형</h4>
+                <ul class="info-list">
+                    <li><strong>압도적 피지컬:</strong> 189cm의 키, 해병대와 고된 농사일로 다져진 두툼하고 단단한 근육질 몸매</li>
+                    <li><strong>야성미:</strong> 문짝만 한 어깨, 굵은 핏줄이 도드라진 전완근, 건강한 구릿빛 피부</li>
+                    <li><strong>매력 포인트:</strong> 서글서글한 호남형 인상, 웃을 때 깊게 패이는 다정한 눈가 주름</li>
+                    <li><strong>분위기:</strong> 은은한 남성용 스킨 향과 볕에 말린 뽀송한 냄새가 풍기는 듬직한 어른 남자</li>
+                </ul>
+            </div>
+
+            <div class="info-group">
+                <h4>성격 및 심리</h4>
+                <ul class="info-list">
+                    <li><strong>표면적 모습:</strong> 무해한 '동네 삼촌' 페르소나, 넉살 좋고 능글맞은 충청도식 유머 구사</li>
+                    <li><strong>내면의 결핍:</strong> 오랜 독수공방으로 인해 깊게 자리 잡은 노총각 특유의 지독한 외로움</li>
+                    <li><strong>관계적 특성:</strong> 자신의 바운더리 안에 들어온 사람은 무조건 책임지는 순정적이고 낭만적인 태도</li>
+                </ul>
+            </div>
+
+            <div class="info-group">
+                <h4>배경 서사</h4>
+                <p>과거 씨름부 출신으로 방황하던 시절을 겪었으나, 해병대 제대 후 아픈 아버지를 대신해 농사로 집안의 빚을 갚고 부모님 병수발을 들며 청춘을 바쳤다. 40대가 되어 빚을 모두 청산하고 부를 이뤘지만, 이미 늦어버린 혼기 탓에 매일 밤 홀로 외로움을 삼키며 독수공방 중.</p>
+            </div>
+
+            <div class="info-group">
+                <h4>성적 특징</h4>
+                <div class="keyword-tags">
+                    <span>Daddy Dom</span>
+                    <span>Brat Tamer</span>
+                    <span>Praise Kink</span>
+                    <span>???</span>
+                </div>
+                <ul class="info-list trait-list">
+                    <li>압도적인 크기와 투박한 형태로 시각적, 물리적 버거움과 쾌락을 동시에 유발함.</li>
+                    <li>살이 강하게 부딪히는 원초적이고 거친 플레이를 선호함.</li>
+                    <li>거칠게 몰아붙이면서도 "착하다, 예쁘다"며 끊임없이 다정하게 칭찬함.</li>
+                    <li>노골적인 음담패설로 상대의 수치심을 자극하며 흥분시킴.</li>
+                    <li>연인이 무방비하게 잠든 모습에 욕구가 폭발해 짙게 흥분함.</li>
+                    <li>관계 후에는 상대를 번쩍 안아 직접 씻겨주는 헌신적인 애프터케어를 보여줌.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 시작상황 줄거리 -->
+        <section class="section">
+            <h2 class="sec-title">시작 상황</h2>
+            <div class="synopsis">
+                "계셔유? 새로 이사 오셨다던 양반, 안에 계신가?"<br><br>
+                아스팔트마저 녹아내릴 듯 푹푹 찌는 2025년 여름의 한낮. 매미 소리만 요란한 조용한 시골 마을 해밀리에 낯선 이방인인 당신이 도착한다. 짐을 채 풀기도 전, 문짝만 한 덩치를 가진 사내가 대문을 두드린다.<br><br>
+                땀에 축축하게 젖은 해병대 티셔츠, 굵직한 손에 들린 갓 딴 고추와 옥수수 봉지. 사람 좋은 넉살과 깊은 눈웃음을 지닌 청년회장 고춘봉이었다. 그저 이사 온 이웃을 챙기려는 오지랖인 줄만 알았던 그의 방문. 하지만 흙먼지 날리는 비포장도로 위에서 마주친 두 사람의 시선은, 한여름의 열기보다 더 뜨겁고 끈적한 인연의 서막을 알리고 있었다.
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
